@@ -1,0 +1,38 @@
+### Register a new user (FIXED JSON FORMAT)
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "username": "newuser",
+    "password": "password"
+}
+
+
+### A second example, each request should be delimited by a triple hash
+GET http://localhost:3000/api/images
+
+
+### Register a user
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "username": "MuhammadArshad1",
+    "password": "P@assword123"
+}
+
+### Log in
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username": "MuhammadArshad1",
+    "password": "P@assword123"
+}
+
+### Fetch images without authentication (should fail)
+GET http://localhost:3000/api/images
+
+### Fetch images with authentication 
+GET http://localhost:3000/api/images?createdBy=67c0b8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik11aGFtbWFkQXJzaGFkMSIsImlhdCI6MTc0MTkyNzM0MCwiZXhwIjoxNzQyMDEzNzQwfQ.AJ_qcOkAgOnO0gUgVSmaDyQ-pX4vp0MsWcsSZKf52pc
